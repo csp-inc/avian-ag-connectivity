@@ -7,7 +7,7 @@
 This repo contains the scripts necessary to reproduce the analyses described in:
 <br>
 
-### *Suraci, JP, TG Mozelewski, CE Littlefield, T Nogeire McRae, A Sorensen, BG Dickson. (2023) Management of U.S. Agricultural Lands Differentially Affects Avian Habitat Connectivity. Land*
+#### [Suraci, JP, TG Mozelewski, CE Littlefield, T Nogeire McRae, A Sorensen, BG Dickson. (2023) Management of U.S. Agricultural Lands Differentially Affects Avian Habitat Connectivity. *Land*. 12(4), 746](https://www.mdpi.com/2073-445X/12/4/746)
 <br>
 
 This work utilized eBird data (https://ebird.org/home) for three focal species - American Black Duck (bird ID used in species-specific scripts = "ambd"), Bobolink ("bobo"), and Greater Sage-Grouse ("sagr") -  to model the effects of agricultural land management and other factors on bird species habitat suitability and connectivity. The scripts provided here for preparing eBird data and using it to model habitat suitability were heavily inspired by code developed by Strimas-Mackey et al. (2020) in their book [Best Practices for Using eBird Data](https://cornelllabofornithology.github.io/ebird-best-practices/). The analysis workflow is outlined below.  
@@ -25,10 +25,10 @@ This work utilized eBird data (https://ebird.org/home) for three focal species -
 
 ## Step 2 - Random forest models of habitat suitability
 * Random forest models are run and validation procedures performed using `analysis/{bird ID}-rand-forest-model.R`
-* Model predictions are used to generate a range-wide habitat suitability surface via `analysis/{bird ID}-hab-suitability-surface.R`
+* Model predictions are used to generate range-wide habitat suitability surfaces via `analysis/{bird ID}-hab-suitability-surface.R`
 
 ## Step 3 - Connectivity models
-* `resistance-from-hab-suit.R` is used to transform habitat suitability surfaces from Step 2 in to landscape resistance surfaces for use in connectivity modeling.
+* `resistance-from-hab-suit.R` is used to transform habitat suitability surfaces from Step 2 into landscape resistance surfaces for use in connectivity modeling.
 * The Omniscape.jl package in Julia (see [Landau et al. 2021](https://joss.theoj.org/papers/10.21105/joss.02829)) is used to run omnidirectional connectivity models via `omniscape/{bird ID}_omni.ini`
 
 
